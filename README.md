@@ -30,7 +30,7 @@ rsync -av  /root/  /tmp/root
 umount /tmp/root
 ```
 
-Now use user scripts to create a script that will run on first array mount.  This script will mount the root directory and change the default root shell to zsh.
+Now use the user scripts plugin to create a script that will run on first array mount.  This script will mount the root directory and change the default root shell to zsh.
 ```
 #!/bin/bash
 
@@ -49,3 +49,13 @@ mkdir /boot/extra
 
 wget -p  /boot/extra  http://mirrors.slackware.com/slackware/slackware64-current/slackware64/ap/zsh-5.9-x86_64-1.txz
 ```
+
+How to remove the mount in case something goes wrong?
+
+A large portion of unraid runs off of a ram drive, including /root.  You can delete /root, reboot, and it will appear again unscathed.  This is what makes using utilities like ohmyzsh problematic since they want to store things in the home directory, which for root is /root.
+
+If something breaks you'll likely just get unraid's default /root folder, however you can remove the mount of your image by manually removing the mount script you created.
+
+Plug the usb drive into another computer, look in /boot/config/plugins/user.scripts/scripts\<your script name\>. You can edit or delete the file named 'script' in this folder.
+
+
