@@ -56,7 +56,13 @@ Script should run 'At First Array Start Only'.
 mount -o loop /boot/root.img /root
 
 #change root shell to /bin/zsh
-sed -i '/^root:/s#/bin/bash#/bin/zsh#' /etc/passwd
+if [ -x /bin/zsh ]; then
+    sed -i '/^root:/s#/bin/bash#/bin/zsh#' /etc/passwd
+    echo "Root shell changed to /bin/zsh"
+else
+    echo "/bin/zsh not found. No changes made."
+fi
+
 ```
 
 At this point you now have a persietent root folder.  You can reboot to try it out.
