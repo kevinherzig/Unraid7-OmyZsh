@@ -1,5 +1,5 @@
 
-# Unraid7-omyzsh
+# Unraid7 Persistent Root Folder with omyzsh
 Guide on how to install Oh my zsh on Unraid with persistent root directory
 
 I've tried a bunch of different solutions to making Unraid allow for persistent root, especially to install utilities such as oh-my-zsh.  After trying a bunch of different methods I think I've settled on what I think is the most straightforward, which is to establish a writable ext4 volume on the boot drive and mounting it as root.
@@ -45,6 +45,9 @@ mount -o loop /boot/root.img /root
 #change root shell to /bin/zsh
 sed -i '/^root:/s#/bin/bash#/bin/zsh#' /etc/passwd
 ```
+
+At this point you now have a persietent root folder.  You can reboot to try it out.
+
 Now let's install the zsh package into /boot/extra so that it is installed each time unraid starts
 
 ```
