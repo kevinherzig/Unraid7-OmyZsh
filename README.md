@@ -55,6 +55,7 @@ Script should run 'At First Array Start Only'.
 # Mount our persistent root image over the default /root
 mount -o loop /boot/root.img /root
 
+#If all you want is persistent root, you can stop here
 #change root shell to /bin/zsh
 #check to make sure zsh exists so we don't cause a console start failure
 if [ -x /bin/zsh ]; then
