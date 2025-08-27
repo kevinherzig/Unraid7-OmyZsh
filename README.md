@@ -32,9 +32,22 @@ rsync -av  /root/  /tmp/root
 umount /tmp/root
 ```
 
+
+Now let's install the zsh package into /boot/extra so that it is installed each time unraid starts.
+
+```
+# Make sure /boot/extra exists and install zsh
+
+mkdir /boot/extra
+
+wget -p  /boot/extra  http://mirrors.slackware.com/slackware/slackware64-current/slackware64/ap/zsh-5.9-x86_64-1.txz
+```
+
+Reboot then test that zsh is properly installed before enabling the script below.  You can simply login in and type 'zsh' to see if you enter the shell.
+
 Now use the user scripts plugin to create a script that will run on first array mount.  This script will mount the root directory and change the default root shell to zsh.  Disabling this script will go back to the unraid default behavior.
 
-Script should run 'At First Array Start Only'
+Script should run 'At First Array Start Only'.
 
 ```
 #!/bin/bash
@@ -48,15 +61,7 @@ sed -i '/^root:/s#/bin/bash#/bin/zsh#' /etc/passwd
 
 At this point you now have a persietent root folder.  You can reboot to try it out.
 
-Now let's install the zsh package into /boot/extra so that it is installed each time unraid starts
 
-```
-# Make sure /boot/extra exists and install zsh
-
-mkdir /boot/extra
-
-wget -p  /boot/extra  http://mirrors.slackware.com/slackware/slackware64-current/slackware64/ap/zsh-5.9-x86_64-1.txz
-```
 
 Finally, you can install ohmyzsh
 
