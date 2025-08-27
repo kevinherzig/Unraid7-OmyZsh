@@ -56,6 +56,7 @@ Script should run 'At First Array Start Only'.
 mount -o loop /boot/root.img /root
 
 #change root shell to /bin/zsh
+#check to make sure zsh exists so we don't cause a console start failure
 if [ -x /bin/zsh ]; then
     sed -i '/^root:/s#/bin/bash#/bin/zsh#' /etc/passwd
     echo "Root shell changed to /bin/zsh"
