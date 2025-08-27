@@ -6,9 +6,11 @@ I've tried a bunch of different solutions to making Unraid allow for persistent 
 
 Here are my scripts to accomplish this.  I think the risk is rather low because you can always remove the image by plugging the usb boot drive into another computer and deleting it.  This will revert back to unraid's default /root.
 
-Please let me know how this works for you and if you run into any issues.
+Please let me know how this works for you and if you run into any issues.  Please be sure to backup your new root partition frequently as this new approach has not been widely tested.
 
-First create the image that will become your /root folder.
+First create the image that will become your /root folder.  WARNING:  If this image already exists it will be overwritten, especially if it's not alredy mounted.
+
+
 
 ```
   
@@ -50,7 +52,16 @@ mkdir /boot/extra
 wget -p  /boot/extra  http://mirrors.slackware.com/slackware/slackware64-current/slackware64/ap/zsh-5.9-x86_64-1.txz
 ```
 
-How to remove the mount in case something goes wrong?
+Finally, you can install ohmyzsh
+
+'''
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+'''
+
+Hope this works!
+
+
+#How to remove the mount in case something goes wrong?
 
 A large portion of unraid runs off of a ram drive, including /root.  You can delete /root, reboot, and it will appear again unscathed.  This is what makes using utilities like ohmyzsh problematic since they want to store things in the home directory, which for root is /root.
 
