@@ -32,7 +32,10 @@ rsync -av  /root/  /tmp/root
 umount /tmp/root
 ```
 
-Now use the user scripts plugin to create a script that will run on first array mount.  This script will mount the root directory and change the default root shell to zsh.
+Now use the user scripts plugin to create a script that will run on first array mount.  This script will mount the root directory and change the default root shell to zsh.  Disabling this script will go back to the unraid default behavior.
+
+Script should run 'At First Array Start Only'
+
 ```
 #!/bin/bash
 
