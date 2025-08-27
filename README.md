@@ -54,9 +54,9 @@ wget -p  /boot/extra  http://mirrors.slackware.com/slackware/slackware64-current
 
 Finally, you can install ohmyzsh
 
-'''
+```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-'''
+```
 
 Hope this works!
 
