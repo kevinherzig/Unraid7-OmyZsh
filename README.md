@@ -40,7 +40,7 @@ Now use the user scripts plugin to create a script that will run on first array 
 mount -o loop /boot/root.img /root
 
 #change root shell to /bin/zsh
-sed -i 's#/bin/bash#/bin/zsh#g' /etc/passwd
+sed -i '/^root:/s#/bin/bash#/bin/zsh#' /etc/passwd
 ```
 Now let's install the zsh package into /boot/extra so that it is installed each time unraid starts
 
