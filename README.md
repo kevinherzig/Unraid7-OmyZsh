@@ -27,7 +27,7 @@ mkfs.ext4 /boot/root.img
 # Mount the image and copy the current default unraid content of /root
 
 mkdir -p  /tmp/root
-mount -o  loop  /boot/rootx.img  /tmp/root
+mount -o  loop  /boot/root.img  /tmp/root
 rsync -av  /root/  /tmp/root
 umount /tmp/root
 ```
