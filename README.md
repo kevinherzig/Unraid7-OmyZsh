@@ -79,14 +79,14 @@ Finally, you can install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Hope this works!
+Hope this is helpfule!
 
 
 #How to remove the mount in case something goes wrong?
 
-A large portion of unraid runs off of a ram drive, including /root.  You can delete /root, reboot, and it will appear again unscathed.  This is what makes using utilities like ohmyzsh problematic since they want to store things in the home directory, which for root is /root.
+A large portion of unraid runs off of a ram drive, including /root.  In default unraid, you can delete /root, reboot, and it will appear again unscathed.  This is what makes using utilities like ohmyzsh problematic since they want to store things in the home directory, which for root is /root.
 
-If something breaks you'll likely just get unraid's default /root folder, however you can remove the mount of your image by manually removing the mount script you created.
+If something breaks you'll likely just get unraid's default /root folder, however you can remove the mount of your image by manually removing the mount script you created or removing the .img file.
 
 Plug the usb drive into another computer, look in /boot/config/plugins/user.scripts/scripts\<your script name\>. You can edit or delete the file named 'script' in this folder.
 
