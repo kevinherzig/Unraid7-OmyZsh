@@ -79,7 +79,7 @@ Finally, you can install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Hope this is helpfule!
+Hope this is helpful!
 
 
 #How to remove the mount in case something goes wrong?
