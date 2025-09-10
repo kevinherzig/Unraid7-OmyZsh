@@ -36,12 +36,8 @@ umount /tmp/root
 Now let's install the zsh package into /boot/extra so that it is installed each time unraid starts.
 
 ```
-# Make sure /boot/extra exists and install zsh
-
-mkdir /boot/extra
-cd /boot/extra
-
-curl -L -O -J  http://mirrors.slackware.com/slackware/slackware64-current/slackware64/ap/zsh-5.9-x86_64-1.txz
+# Download zsh - needs a reboot to install
+curl --create-dirs -O --output-dir /boot/extra http://mirrors.slackware.com/slackware/slackware64-current/slackware64/ap/zsh-5.9-x86_64-1.txz
 ```
 
 Reboot then test that zsh is properly installed before enabling the script below.  You can simply login in and type 'zsh' to see if you enter the shell.
